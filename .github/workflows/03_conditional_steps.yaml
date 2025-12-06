@@ -14,18 +14,21 @@ jobs:
         if: ${{ success() }}
         run: echo "This step runs only if all previous steps were successful"
 
-      - name: Step 3 - Runs on failure
-        if: ${{ failure() }}
-        run: echo "This step runs only if any previous step failed"
+      
 
-      - name: Step 4 - Runs on cancelled
+      - name: Step 3 - Runs on cancelled
         if: ${{ cancelled() }}
         run: echo "This step runs only if the workflow was cancelled"  
 
-      - name: Step 5 - runs on success or failure
+      - name: Step 4 - runs on success or failure
         run : |
           echo "This step runs regardless of previous step outcomes"
           exit 1
+
+      - name: Step 5 - Runs on failure
+        if: ${{ failure() }}
+        run: echo "This step runs only if any previous step failed"
+
       - name: Step 6 - I will never run
         if: ${{ always() }}
         run: echo "This step will not runs no matter what"    
