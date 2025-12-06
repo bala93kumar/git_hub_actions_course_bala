@@ -30,4 +30,4 @@ jobs:
         run: echo "This step runs only if any previous step failed"
 
       - name: Step 6 - I will never run
-=       run: echo "This step will not runs no matter what"    
+        run: echo "This step will not runs no matter what"    
